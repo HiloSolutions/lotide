@@ -10,21 +10,22 @@ const assertEqual = function(eqArrays, expected) {
   if (eqArrays === expected) {
     return console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${eqArrays} === ${expected}`);
   }
-  return console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${eqArrays} !== ${expected}`);
+  console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${eqArrays} !== ${expected}`);
 };
 /*
 function takes in 2 inputs and returns a new array
  */
+
 const without = function(sourceArr, removeArr) {
-  let arr = [];
+  let resultArray = [];
   //check contents of source array
-  for (let element of sourceArr) {
+  sourceArr.forEach((element) => {
     //compare to each content of remove ARR
     if (!removeArr.includes(element)) {
-      arr.push(element);
+      resultArray.push(element);
     }
-  }
-  return console.log(arr);
+  });
+  return resultArray;
 };
 
 //test code
