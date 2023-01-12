@@ -4,7 +4,7 @@ const eqArrays = function(arrOne, arrTwo) {
 };
 
 //test return of equality with the assert Equal argument
-const assertEqual = function(eqArrays, expected) {
+const assertArraysEqual = function(eqArrays, expected) {
   if (eqArrays === expected) {
     return console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${eqArrays} === ${expected}`);
   }
@@ -25,4 +25,4 @@ const flatten = function(arr) {
 
 //TEST
 console.log(flatten([1, 2, [3, 4], 5, [6]]));
-assertEqual(eqArrays(flatten, [1, 2, 3]), false); // => pass
+assertArraysEqual(eqArrays(flatten, [1, 2, 3]), false); // => pass

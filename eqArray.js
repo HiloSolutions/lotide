@@ -1,4 +1,4 @@
-const assertEqual = function(actual, expected) {
+const assertArraysEqual = function(actual, expected) {
   if (actual === expected) {
     return console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${actual} === ${expected}`);
   }
@@ -17,8 +17,8 @@ const eqArrays = function(arrOne, arrTwo) {
   return (JSON.stringify(arrOne) === JSON.stringify(arrTwo));
 };
 //TEST CODE
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => pass
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // => pass
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), false); // => fail
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true); // => fail
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
+assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => pass
+assertArraysEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // => pass
+assertArraysEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), false); // => fail
+assertArraysEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true); // => fail
+assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS

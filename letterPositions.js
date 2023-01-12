@@ -11,9 +11,23 @@ const assertArraysEqual = function(eqArrays, expected) {
   return console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${eqArrays} !== ${expected}`);
 };
 
-//TEST CODE
-assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => pass
-assertArraysEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // => pass
-assertArraysEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), false); // => fail
-assertArraysEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true); // => fail
-assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
+
+const letterPositions = function(sentence) {
+  let positions = {};
+  // iterate through the sentence
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence[i] !== " ") {
+      const letter = sentence[i];
+      if (positions[letter]) {
+        positions[letter].push(i);
+      } else {
+        positions[letter] = [i];
+      }
+    }
+  }
+  console.log(positions);
+};
+
+//TEST
+letterPositions('lighthouses');
+assertArraysEqual(letterPositions("hello").e, [1]);
