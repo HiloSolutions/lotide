@@ -1,8 +1,14 @@
+const eqArrays = function(arrOne, arrTwo) {
+  return (JSON.stringify(arrOne) === JSON.stringify(arrTwo));
+};
+
 const assertEquals = function(actual, expected) {
   if (actual === expected) {
-    return console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${actual} === ${expected}`);
+    console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${actual} === ${expected}`);
+    return true;
   }
-  return console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${actual} !== ${expected}`);
+  console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${actual} !== ${expected}`);
+  return false;
 };
 
 
@@ -19,6 +25,13 @@ const eqObjects = function(object1, object2) {
   for (const key of keys1) {
     const value1 = object1[key];
     const value2 = object2[key];
+
+    if (Array.isArray(value1) || Array.isArray(value2)) {
+      if (assertEquals(eqArrays([value1], [value2]),false)) {
+        return false;
+      }
+    }
+
     if (value1 !== value2) {
       return false;
     }
@@ -42,6 +55,8 @@ const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
 const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "green"] };
 eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject); // => true
 assertEquals(eqObjects(shirtObject , longSleeveShirtObject), false); //=> true
+
+
 
 
 

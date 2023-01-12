@@ -19,10 +19,10 @@ const findKeyByValue = function(showsList, showToFind) {
 //return first key which contains the given value
 
 //TEST
-const bestTVShowsByGenre = {
-  sciFi: "The Expanse",
+const bestTVShowsByGenre = { 
+  sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
 };
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"),"drama");//=>function returns dramaa
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70's Show"), undefined);
+assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70's Show"), undefined)
