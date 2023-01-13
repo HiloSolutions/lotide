@@ -1,29 +1,32 @@
 const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    return console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${actual} === ${expected}`);
+  if (actual !== expected) {
+    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
+    return;
   }
-  return console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${actual} !== ${expected}`);
+
+  console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
 };
 
 
 //takes in a sentence (str)
 //return count of all letters in an object
-const countLetters = function(sentence) {
-  let letterCount = {};
+const countLetters = function(str) {
+  let result = {};
 
-  for (let letter of sentence) {
-    if (letter !== " ") {
-      if (letterCount[letter]) {
-        //defined
-        letterCount[letter]++;
-      } else {
-        letterCount[letter] = 1;
-      }
+  for (const letter of str) {
+    if (letter === " ") {
+      continue;
     }
+
+    if (!result[letter]) {
+      result[letter] = 0;
+    }
+
+    result[letter]++;
   }
-  console.log(letterCount);
-  return letterCount;
+  console.log(result);
 };
+
 
 
 //TESTS

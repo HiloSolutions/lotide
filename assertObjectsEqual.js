@@ -1,14 +1,28 @@
-const eqArrays = function(arrOne, arrTwo) {
-  return (JSON.stringify(arrOne) === JSON.stringify(arrTwo));
-};
+const eqArrays = function(arr1, arr2) {
+  
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  
+  for (let i = 0; i < arr1.length; i++) {
+    const element1 = arr1[i];
+    const element2 = arr2[i];
 
-const assertEquals = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${actual} === ${expected}`);
+    if (element1 !== element2) {
+      return false;
+    }
+
     return true;
   }
-  console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${actual} !== ${expected}`);
-  return false;
+};
+
+const assertEqual = function(actual, expected) {
+  if (actual !== expected) {
+    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
+    return;
+  }
+
+  console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
 };
 
 

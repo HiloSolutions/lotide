@@ -1,6 +1,16 @@
 //Takes in two arrays to test equality
-const eqArrays = function(arrOne, arrTwo) {
-  return JSON.stringify(arrOne) === JSON.stringify(arrTwo);
+const eqArrays = function(arr1, arr2) {
+  
+  for (let i = 0; i < arr1.length; i++) {
+    const element1 = arr1[i];
+    const element2 = arr2[i];
+
+    if (element1 !== element2) {
+      return false;
+    }
+
+    return true;
+  }
 };
 
 //test return of equality with the assert Equal argument

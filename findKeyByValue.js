@@ -1,8 +1,10 @@
 const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    return console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${actual} === ${expected}`);
+  if (actual !== expected) {
+    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
+    return;
   }
-  return console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${actual} !== ${expected}`);
+
+  console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
 };
 
 //intakes an object AND a value
@@ -42,4 +44,4 @@ eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject); // => true
 assertEquals(eqObjects(shirtObject , longSleeveShirtObject), false); //=> true
 
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"),"drama");//=>function returns dramaa
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70's Show"), undefined)
+assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70's Show"), undefined);

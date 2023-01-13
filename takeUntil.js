@@ -1,11 +1,13 @@
 //take in array and callback
-const takeUntil = (array, callback) => {
+const takeUntil = (arr, callback) => {
   const result = [];
 
-  for (const item of array) {
+  for (const item of arr) {
+  
     if (callback(item)) {
       return result;
     }
+
     result.push(item);
   }
 

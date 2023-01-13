@@ -1,16 +1,32 @@
 //2 array inputs: 1 intake source 1 intake remove items list
 //remove unwanted items
 //Takes in two arrays to test equality
-const eqArrays = function(arrOne, arrTwo) {
-  return JSON.stringify(arrOne) === JSON.stringify(arrTwo);
+const eqArrays = function(arr1, arr2) {
+  
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  
+  for (let i = 0; i < arr1.length; i++) {
+    const element1 = arr1[i];
+    const element2 = arr2[i];
+
+    if (element1 !== element2) {
+      return false;
+    }
+
+    return true;
+  }
 };
 
 //test return of equality with the assert Equal argument
-const assertEqual = function(eqArrays, expected) {
-  if (eqArrays === expected) {
-    return console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${eqArrays} === ${expected}`);
+const assertEqual = function(actual, expected) {
+  if (actual !== expected) {
+    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
+    return;
   }
-  console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${eqArrays} !== ${expected}`);
+
+  console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
 };
 /*
 function takes in 2 inputs and returns a new array

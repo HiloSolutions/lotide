@@ -8,19 +8,25 @@ const assertEqual = function(actual, expected) {
 
 
 //CODE GOES HERE
+
 const findKey = (obj, callback) => {
-  for (const item in obj) {
-    if (callback(obj[item])) {
-      return true;
+
+  const keys = Object.keys(obj);
+
+  for (const key of keys) {
+    const value = obj[key];
+
+    if (callback(value)) {
+      return key;
     }
+
   }
-  return true;
+
 };
 
 
-
 //call the anonymous function
-findKey({
+const result = findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },
   "noma":      { stars: 2 },
@@ -30,6 +36,4 @@ findKey({
 }, x => x.stars === 2);
 
 //TEST
-
-assertEqual(findKey(),true);// => pass
-assertEqual(findKey(),false);// => fail
+console.log(result);

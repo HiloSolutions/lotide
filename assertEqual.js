@@ -1,10 +1,12 @@
 const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    return console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${actual} === ${expected}`);
+  if (actual !== expected) {
+    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
+    return;
   }
-  return console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${actual} !== ${expected}`);
+
+  console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
 };
 
 // TEST CODE
-assertEqual("Bootcamp", "Bootcamp"); //error
-assertEqual(2, 1); //no message
+assertEqual("Bootcamp", "Bootcamp"); //=>pass
+assertEqual(2, 1); //=> fail
