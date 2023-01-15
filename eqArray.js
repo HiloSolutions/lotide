@@ -1,9 +1,12 @@
-const assertArraysEqual = function(actual, expected) {
-  if (actual === expected) {
-    return console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${actual} === ${expected}`);
+const assertEqual = function(actual, expected) {
+  if (actual !== expected) {
+    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
+    return;
   }
-  return console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${actual} !== ${expected}`);
+
+  console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
 };
+
 
 /*
 1. Function
@@ -20,19 +23,16 @@ const eqArrays = function(arr1, arr2) {
   }
   
   for (let i = 0; i < arr1.length; i++) {
-    const element1 = arr1[i];
-    const element2 = arr2[i];
-
-    if (element1 !== element2) {
+    if (arr1[i] !== arr2[i]) {
       return false;
     }
-
-    return true;
   }
+
+  return true;
 };
 //TEST CODE
-assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => pass
-assertArraysEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // => pass
-assertArraysEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), false); // => fail
-assertArraysEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true); // => fail
-assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => pass
+assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // => pass
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), false); // => fail
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true); // => fail
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS

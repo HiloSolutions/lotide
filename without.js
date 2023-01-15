@@ -8,25 +8,20 @@ const eqArrays = function(arr1, arr2) {
   }
   
   for (let i = 0; i < arr1.length; i++) {
-    const element1 = arr1[i];
-    const element2 = arr2[i];
-
-    if (element1 !== element2) {
+    if (arr1[i] !== arr2[i]) {
       return false;
     }
-
-    return true;
   }
+
+  return true;
 };
 
 //test return of equality with the assert Equal argument
-const assertEqual = function(actual, expected) {
-  if (actual !== expected) {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
-    return;
+const assertArraysEqual = function(eqArrays, expected) {
+  if (eqArrays === expected) {
+    return console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${eqArrays} === ${expected}`);
   }
-
-  console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+  return console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${eqArrays} !== ${expected}`);
 };
 /*
 function takes in 2 inputs and returns a new array
@@ -49,4 +44,4 @@ without([1, 2, 3], [1]);  // => [2, 3]
 without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
 without(["1", "2", "3"],["1", "2", "3"]); // => []
 //test case to ensure that the array is unmodified
-assertEqual(eqArrays(without, [1, 2, 3]), false); // => pass
+assertArraysEqual(eqArrays(without, [1, 2, 3]), false); // => pass

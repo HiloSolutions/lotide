@@ -18,13 +18,11 @@ const eqArrays = function(arr1, arr2) {
 };
 
 //test return of equality with the assert Equal argument
-const assertEqual = function(actual, expected) {
-  if (actual !== expected) {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
-    return;
+const assertArraysEqual = function(eqArrays, expected) {
+  if (eqArrays === expected) {
+    return console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${eqArrays} === ${expected}`);
   }
-
-  console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+  return console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${eqArrays} !== ${expected}`);
 };
 
 //take in an array
@@ -53,4 +51,4 @@ middle([1, 2, 3]); // => [2]
 middle([1, 2, 3, 4, 5]); // => [3]
 middle([1, 2, 3, 4]); // => [2, 3]
 middle([1, 2, 3, 4, 5, 6]); // => [3, 4]
-assertEqual(eqArrays(middle, [1, 2, 3]), false); // => pass
+assertArraysEqual(eqArrays(middle, [1, 2, 3]), false); // => pass

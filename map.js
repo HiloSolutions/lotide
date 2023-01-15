@@ -6,15 +6,12 @@ const eqArrays = function(arr1, arr2) {
   }
   
   for (let i = 0; i < arr1.length; i++) {
-    const element1 = arr1[i];
-    const element2 = arr2[i];
-
-    if (element1 !== element2) {
+    if (arr1[i] !== arr2[i]) {
       return false;
     }
-
-    return true;
   }
+
+  return true;
 };
 
 const assertArraysEqual = function(eqArrays, expected) {
@@ -38,7 +35,6 @@ const map = function(array, callback) {
 const words = ["ground", "control", "to", "major", "tom"];
 
 const results1 = map(words, word => word[0]);
-console.log(results1);
 
 //TEST
 assertArraysEqual(eqArrays(map, map), true);//=>PASS
