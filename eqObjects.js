@@ -1,4 +1,4 @@
-const eqArrays = function(arr1, arr2) {
+const arr1 = function(arr1, arr2) {
   
   if (arr1.length !== arr2.length) {
     return false;
@@ -41,7 +41,7 @@ const eqObjects = function(object1, object2) {
     const value2 = object2[key];
 
     if (Array.isArray(value1) || Array.isArray(value2)) {
-      if (!eqArrays([value1], [value2])) {
+      if (!arr1([value1], [value2])) {
         return false;
       }
       continue;

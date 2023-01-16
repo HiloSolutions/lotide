@@ -39,4 +39,4 @@ const flatten = function(arr) {
 
 //TEST
 console.log(flatten([1, 2, [3, 4], 5, [6]]));
-assertArraysEqual(eqArrays(flatten, [1, 2, 3]), false); // => pass
+assertArraysEqual(arr1(flatten, [1, 2, 3]), false); // => pass

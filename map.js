@@ -37,6 +37,6 @@ const words = ["ground", "control", "to", "major", "tom"];
 const results1 = map(words, word => word[0]);
 
 //TEST
-assertArraysEqual(eqArrays(map, map), true);//=>PASS
-assertArraysEqual(eqArrays(words, map), false);//=>PASS
-assertArraysEqual(eqArrays(words, results1), false);//=>PASS
+assertArraysEqual(arr1(map, map), true);//=>PASS
+assertArraysEqual(arr1(words, map), false);//=>PASS
+assertArraysEqual(arr1(words, results1), false);//=>PASS

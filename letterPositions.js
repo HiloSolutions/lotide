@@ -1,10 +1,11 @@
+const eqArrays = require('./eqArrays');
 
 //test return of equality with the assert Equal argument
-const assertArraysEqual = function(eqArrays, expected) {
-  if (eqArrays === expected) {
-    return console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${eqArrays} === ${expected}`);
+const assertArraysEqual = function(arr1, arr2) {
+  if (eqArrays(arr1, arr2)) {
+    return console.log(`${String.fromCodePoint(0x1F7E2)} Assertion Passed: ${arr1} === ${arr2}`);
   }
-  return console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${eqArrays} !== ${expected}`);
+  return console.log(`${String.fromCodePoint(0x1F534)} Assertion Failed: ${arr1} !== ${arr2}`);
 };
 
 
@@ -20,9 +21,10 @@ const letterPositions = function(sentence) {
       }
     }
   }
+  console.log('letter position',results);
   return results;
 };
 
 //TEST
 letterPositions('lighthouses');
-assertArraysEqual(letterPositions("hello").e, [1]);
+assertArraysEqual(letterPositions("hello").l, [2,3]);

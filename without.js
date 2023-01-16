@@ -44,4 +44,4 @@ without([1, 2, 3], [1]);  // => [2, 3]
 without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
 without(["1", "2", "3"],["1", "2", "3"]); // => []
 //test case to ensure that the array is unmodified
-assertArraysEqual(eqArrays(without, [1, 2, 3]), false); // => pass
+assertArraysEqual(arr1(without, [1, 2, 3]), false); // => pass
