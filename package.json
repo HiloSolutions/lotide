@@ -19,6 +19,9 @@
     "url": "https://github.com/HiloSolutions/lotide/issues"
   },
   "homepage": "https://github.com/HiloSolutions/lotide#readme",
+  "dependencies": {
+    "chai": "^4.3.7"
+  },
   "devDependencies": {
     "chai": "^4.3.7",
     "mocha": "^9.2.2"
