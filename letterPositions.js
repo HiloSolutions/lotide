@@ -21,7 +21,7 @@ const letterPositions = function(sentence) {
       }
     }
   }
-  console.log('letter position',results);
+
   return results;
 };
 

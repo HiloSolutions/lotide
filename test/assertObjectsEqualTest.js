@@ -1,14 +1,14 @@
 //IMPORTS
-const assertObjectsEqual = require('..assertObjectsEqual');
-const eqObjects = require('..assertObjectsEqual');
+const assertObjectsEqual = require('../assertObjectsEqual');
+const eqObjects = require('../eqObjects');
 
 
 
 //TESTS
 assertObjectsEqual(eqObjects({a: 1, b: 2, c: 3}, {a: 1, b: 2, c: 3}), true); // => pass
 assertObjectsEqual(eqObjects({a: 1, b: 2, c: 3}, {a: 3, b: 2, c: 1}), false); // => pass
-assertObjectsEqual(eqObjects({a: 1, b: 2, c: 3}, {a: 1, b: 2, c: 3}), false); // => fail
-assertObjectsEqual(eqObjects({a: 1, b: 2, c: 3}, {a: 3, b: 2, c: 1}), true); // => fail
+//assertObjectsEqual(eqObjects({a: 1, b: 2, c: 3}, {a: 1, b: 2, c: 3}), false); // => fail
+//assertObjectsEqual(eqObjects({a: 1, b: 2, c: 3}, {a: 3, b: 2, c: 1}), true); // => fail
 assertObjectsEqual(eqObjects({a: [1, 2], b: 2, c: 3}, {a: [1, 2], b: 2, c: 3}), true); // => should PASS
 
 //ADDITIONAL TESTING
