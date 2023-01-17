@@ -34,9 +34,10 @@ const flatten = function(arr) {
       flattened.push(arr[i]); //FALSE we can push the element to our new array as is
     }
   }
+  console.log(flattened);
   return flattened;
 };
 
 //TEST
-console.log(flatten([1, 2, [3, 4], 5, [6]]));
-assertArraysEqual(arr1(flatten, [1, 2, 3]), false); // => pass
+
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), true); // => pass

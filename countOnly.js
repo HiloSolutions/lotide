@@ -15,4 +15,4 @@ const countOnly = function(inventory, itemsNeeded) {
 };
 
 //EXPPORT
-module.exports = countOnly.js;
+module.exports = countOnly;
