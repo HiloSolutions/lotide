@@ -13,13 +13,9 @@ const countLetters = function(str) {
     result[letter]++;
   }
 
-  console.log(result);
   return result;
 };
 
 module.exports = countLetters;
 
 
-countLetters('LA');
-countLetters('LHL j');
-countLetters('');
