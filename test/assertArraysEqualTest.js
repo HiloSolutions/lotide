@@ -11,5 +11,7 @@ assertArraysEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false); // => pass
 assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
 
 //EXPORT
-module.exports = assertArraysEqual;
-module.exports = eqArrays;
+module.exports = {
+  assertArraysEqual,
+  eqArrays
+};

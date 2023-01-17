@@ -16,17 +16,6 @@ const arr1 = function(arr1, arr2) {
   }
 };
 
-const assertEquals = function(actual, expected) {
-  if (actual !== expected) {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
-    return;
-  }
-
-  console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-};
-
-
-
 //false means not a perfect match and true means perfect match
 const eqObjects = function(object1, object2) {
   //check if all the same keys are present
@@ -54,23 +43,8 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-//test
-const shirtObject = { color: "red", size: "medium" };
-const anotherShirtObject = { size: "medium", color: "red" };
-assertEquals(eqObjects(shirtObject , anotherShirtObject), true); //=>true
+module.exports = eqObjects;
 
-
-const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
-assertEquals(eqObjects(shirtObject , longSleeveShirtObject), false); //=>true
-
-
-const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
-const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "green"] };
-
-assertEquals(eqObjects(shirtObject , longSleeveShirtObject), false); //=> FALSE
-
-const result = eqObjects(multiColorShirtObject , anotherMultiColorShirtObject);
-console.log(result); //=>FALSE
 
 
 
